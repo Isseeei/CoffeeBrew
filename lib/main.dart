@@ -6,15 +6,16 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'ALCOHOLKINDS',
+            'Coffee Brew Buddy',
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.w700,
               fontStyle: FontStyle.normal,
               letterSpacing: 1.5,
+              color: Colors.white,
             ),
           ),
-          backgroundColor: Color(0xFF1DB954), // Spotify Green
+          backgroundColor: Color(0xFF3E2723), // Espresso Brown
         ),
         body: Center(
           child: Column(
@@ -22,10 +23,10 @@ void main() {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'HELLO SOB',
+                'POUR OVER',
                 style: TextStyle(
                   fontSize: 30,
-                  color: Color(0xFF1DB954), // Spotify Green
+                  color: Color(0xFF6F4F37), // Coffee Bean Brown
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2.5,
                   shadows: [
@@ -38,10 +39,10 @@ void main() {
                 ),
               ),
               Text(
-                'HELLO SOB',
+                'FRENCH PRESS',
                 style: TextStyle(
                   fontSize: 28,
-                  color: Color(0xFF1DB954), // Spotify Green
+                  color: Color(0xFF6F4F37), // Coffee Bean Brown
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2.5,
                   shadows: [
@@ -54,10 +55,10 @@ void main() {
                 ),
               ),
               Text(
-                'HELLO SOB',
+                'ESPRESSO',
                 style: TextStyle(
                   fontSize: 26,
-                  color: Color(0xFF1DB954), // Spotify Green
+                  color: Color(0xFF6F4F37), // Coffee Bean Brown
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2.5,
                   shadows: [
@@ -72,7 +73,7 @@ void main() {
             ],
           ),
         ),
-        backgroundColor: Colors.black, // Dark background like Spotify
+        backgroundColor: Color(0xFFD1B29D), // Cappuccino Cream
       ),
     ),
   );
