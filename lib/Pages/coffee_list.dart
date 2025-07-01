@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'coffee_card.dart'; // Import CoffeeCard widget
 import 'coffee_method.dart'; // Import CoffeeMethod model
-import 'brew_detail_screen.dart'; // Import BrewDetailScreen
+import 'forms.dart'; // Import the new form screen
 
 class CoffeeList extends StatelessWidget {
   final Color background = Color(0xFFD1B29D);
@@ -55,6 +55,16 @@ class CoffeeList extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF3E2723),
+        child: Icon(Icons.add, color: Color(0xFFFFE0B2)),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CoffeeRatioForm()),
+          );
+        },
       ),
     );
   }

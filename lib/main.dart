@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Pages/coffee_list.dart'; // Import CoffeeList screen
-import 'Pages/profile_screen.dart'; // Import ProfileScreen
+import 'Pages/coffee_list.dart';       // Brew Methods screen
+import 'Pages/profile_screen.dart';    // Profile screen
+import 'Pages/forms.dart';             // CoffeeRatioForm screen
 
 void main() => runApp(CoffeeApp());
 
@@ -23,8 +24,8 @@ class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    CoffeeList(),  // First screen is CoffeeList
-    ProfileScreen(),  // Second screen is ProfileScreen
+    CoffeeList(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -52,6 +53,20 @@ class _MainNavigationState extends State<MainNavigation> {
           ),
         ],
       ),
+
+      // Show FAB only on Brew Methods tab (index 0)
+      floatingActionButton: _selectedIndex == 0
+          ? FloatingActionButton(
+        backgroundColor: Color(0xFF3E2723),
+        child: Icon(Icons.add, color: Color(0xFFFFE0B2)),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CoffeeRatioForm()),
+          );
+        },
+      )
+          : null,
     );
   }
 }
