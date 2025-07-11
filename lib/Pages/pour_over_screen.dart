@@ -1,55 +1,51 @@
 import 'package:flutter/material.dart';
+import '../Widgets/pour_over_demo.dart';
 
 class PourOverScreen extends StatelessWidget {
-  const PourOverScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF3E2723),
-        title: const Text(
-          'Pour Over',
-          style: TextStyle(
-            color: Color(0xFFFFE0B2),
-            fontWeight: FontWeight.bold,
-          ),
+        title: Text(
+          'Pour Over Method',
+          style: TextStyle(color: Color(0xFFFFE0B2)),
         ),
-        iconTheme: const IconThemeData(
-          color: Color(0xFFFFE0B2),
-        ),
+        backgroundColor: Color(0xFF3E2723),
+        elevation: 4.0,
       ),
-      backgroundColor: const Color(0xFFD1B29D),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Pour Over Method',
-            style: TextStyle(
-              fontSize: 24,
-              color: Color(0xFF3E2723),
-              fontWeight: FontWeight.bold,
-            ),
+      backgroundColor: Color(0xFFD1B29D), // Match French Press background
+      body: Container(
+        color: Color(0xFFD1B29D), // Double ensure background color
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              const Text(
+                'Learn how to brew coffee with Pour Over method.',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color(0xFF3E2723),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Expanded(
+                child: PourOverDemo(),
+              ),
+              const SizedBox(height: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  'Pour-over involves slowly pouring hot water over coffee grounds to extract flavors, producing a smooth and balanced coffee.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16, color: Color(0xFF3E2723)),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: 180,
-            height: 180,
-            child: Image.asset(
-              'assets/images/pour_over.png',
-              fit: BoxFit.contain,
-            ),
-          ),
-          const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.0),
-            child: Text(
-              'Pour over involves manually pouring hot water over coffee grounds using a filter. It gives control over brewing time and temperature for a clean, complex cup.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, color: Color(0xFF3E2723)),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

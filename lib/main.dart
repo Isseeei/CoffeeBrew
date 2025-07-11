@@ -1,3 +1,4 @@
+import 'package:coffeebrewbuddy/screen/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'Pages/coffee_list.dart';       // Brew Methods screen
 import 'Pages/profile_screen.dart';    // Profile screen
@@ -14,11 +15,16 @@ class CoffeeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MainNavigation(),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoadingScreen(),
+        '/home': (context) => MainNavigation(),
+      },
     );
   }
 }
+
 
 class MainNavigation extends StatefulWidget {
   @override

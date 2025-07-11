@@ -16,19 +16,19 @@ class CoffeeCard extends StatelessWidget {
 
     switch (coffeeMethod.name) {
       case 'Cold Brew':
-        screen = const ColdBrewScreen();
+        screen = ColdBrewScreen();  // No 'const' here
         break;
       case 'Pour Over':
-        screen = const PourOverScreen();
+        screen = PourOverScreen();  // No 'const' here
         break;
       case 'French Press':
-        screen = const FrenchPressScreen();
+        screen = FrenchPressScreen();  // No 'const' here
         break;
       case 'Espresso':
-        screen = const EspressoScreen();
+        screen = EspressoScreen();  // No 'const' here
         break;
       case 'AeroPress':
-        screen = const AeroPressScreen();
+        screen = AeroPressScreen();  // No 'const' here
         break;
       default:
         screen = Scaffold(
@@ -50,7 +50,7 @@ class CoffeeCard extends StatelessWidget {
       child: Card(
         elevation: 6,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        color: const Color(0xFF3E2723),
+        color: const Color(0xFF3E2723), // Card background color
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -58,14 +58,14 @@ class CoffeeCard extends StatelessWidget {
               Icon(
                 coffeeMethod.icon,
                 size: 60,
-                color: const Color(0xFFFFE0B2),
+                color: const Color(0xFFFFE0B2), // Icon color
               ),
               const SizedBox(height: 8),
               Text(
                 coffeeMethod.name,
                 style: const TextStyle(
                   fontSize: 16,
-                  color: Color(0xFFFFE0B2),
+                  color: Color(0xFFFFE0B2), // Text color
                   fontWeight: FontWeight.bold,
                 ),
               ),

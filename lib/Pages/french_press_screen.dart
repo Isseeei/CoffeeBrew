@@ -1,57 +1,53 @@
 import 'package:flutter/material.dart';
+import '../Widgets/french_press_demo.dart';
 
 class FrenchPressScreen extends StatelessWidget {
-  const FrenchPressScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFD1B29D),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF3E2723),
-        title: const Text(
-          'French Press',
-          style: TextStyle(
-            color: Color(0xFFFFE0B2),
-            fontWeight: FontWeight.bold,
-          ),
+        title: Text(
+          'French Press Method',
+          style: TextStyle(color: Color(0xFFFFE0B2)),  // Light brown text color
         ),
-        iconTheme: const IconThemeData(
-          color: Color(0xFFFFE0B2),
-        ),
+        backgroundColor: Color(0xFF3E2723),  // Dark brown color for the AppBar
+        elevation: 4.0,
       ),
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'French Press Method',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFF3E2723),
-                fontWeight: FontWeight.bold,
+      backgroundColor: Color(0xFFD1B29D), // Beige background (matches previous)
+      body: Container(
+        color: Color(0xFFD1B29D), // Ensures full coverage
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              // Text description of French Press Method
+              const Text(
+                'Learn how to brew coffee with French Press method.',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color(0xFF3E2723),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: 180,
-              height: 180,
-              child: Image.asset(
-                'assets/images/french_press.png',
-                fit: BoxFit.contain,
+              const SizedBox(height: 20),
+              // Add the FrenchPressDemo widget here to show the animation
+              Expanded(
+                child: FrenchPressDemo(), // Animation widget
               ),
-            ),
-            const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.0),
-              child: Text(
-                'French press brewing involves steeping coarse coffee grounds in hot water for 4–5 minutes and pressing with a plunger.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Color(0xFF3E2723)),
+              const SizedBox(height: 20),
+              // Text description below the animation
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  'French press brewing involves steeping coffee grounds in hot water and then pressing them using a plunger.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16, color: Color(0xFF3E2723)),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

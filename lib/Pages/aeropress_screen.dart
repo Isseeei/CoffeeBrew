@@ -38,7 +38,7 @@ class AeroPressScreen extends StatelessWidget {
               width: 180,
               height: 180,
               child: Image.asset(
-                'assets/images/aeropress.png',
+                '',
                 fit: BoxFit.contain,
               ),
             ),

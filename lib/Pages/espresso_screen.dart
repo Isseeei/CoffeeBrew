@@ -1,57 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:coffeebrewbuddy/Widgets/espresso_demo.dart';
 
 class EspressoScreen extends StatelessWidget {
-  const EspressoScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFD1B29D),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF3E2723),
-        title: const Text(
-          'Espresso',
-          style: TextStyle(
-            color: Color(0xFFFFE0B2),
-            fontWeight: FontWeight.bold,
-          ),
+        title: Text(
+          'Espresso Method',
+          style: TextStyle(color: Color(0xFFFFE0B2)),  // Light brown text color
         ),
-        iconTheme: const IconThemeData(
-          color: Color(0xFFFFE0B2),
-        ),
+        backgroundColor: Color(0xFF3E2723),  // Dark brown color for the AppBar
+        elevation: 4.0,
       ),
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Espresso Method',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFF3E2723),
-                fontWeight: FontWeight.bold,
+      backgroundColor: Color(0xFFD1B29D), // Consistent beige background
+      body: Container(
+        color: Color(0xFFD1B29D), // Double protection for full coverage
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              // Text description
+              const Text(
+                'Learn how to brew coffee with the Espresso method.',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color(0xFF3E2723),  // Dark brown text
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: 180,
-              height: 180,
-              child: Image.asset(
-                'assets/images/espresso.png',
-                fit: BoxFit.contain,
+              const SizedBox(height: 20),
+              // Animation widget
+              Expanded(
+                child: Builder(
+                  builder: (context) => EspressoDemo(),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.0),
-              child: Text(
-                'Espresso is a strong coffee made by forcing hot water through finely ground coffee under high pressure.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Color(0xFF3E2723)),
+              const SizedBox(height: 20),
+              // Description text
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  'Espresso brewing involves forcing hot water through finely-ground coffee under high pressure.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF3E2723)  // Dark brown text
+                  ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

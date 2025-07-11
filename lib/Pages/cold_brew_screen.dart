@@ -36,7 +36,7 @@ class ColdBrewScreen extends StatelessWidget {
             width: 180,
             height: 180,
             child: Image.asset(
-              'assets/images/cold_brew.png',
+              '',
               fit: BoxFit.contain,
             ),
           ),
